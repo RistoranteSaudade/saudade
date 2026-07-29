@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1A3E3E;
+  --color-secondary: #0A1F1F;
+  --color-darkGreen: #0D2626;
+  --color-accent: #C9A961;
+  --color-sand: #C9A961;
+  --color-paper: #F5F5F4;
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Lato", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-secondary text-stone-200;
+  }
+}

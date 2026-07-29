@@ -1,0 +1,19 @@
+{
+  "name": "saudade-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy"
+  },
+  "dependencies": {
+    "sanity": "latest",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "@sanity/cli": "^6.0.0",
+    "typescript": "~5.8.2"
+  }
+}
