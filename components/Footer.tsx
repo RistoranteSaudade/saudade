@@ -47,8 +47,25 @@ const Footer: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="mt-10 pt-6 border-t border-accent/40 text-center text-xs text-stone-600">
-          &copy; {new Date().getFullYear()} Saudade Ristorante Brasiliano
+        <div className="mt-10 pt-6 border-t border-accent/40 text-center text-xs text-stone-600 flex flex-col items-center gap-2">
+          <span>&copy; {new Date().getFullYear()} Saudade Ristorante Brasiliano</span>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://www.iubenda.com/privacy-policy/16571007"
+              className="iubenda-white iubenda-noiframe iubenda-embed hover:text-accent transition-colors"
+              title="Privacy Policy"
+            >
+              Privacy Policy
+            </a>
+            <span className="text-stone-700">·</span>
+            <a
+              href="https://www.iubenda.com/privacy-policy/16571007/cookie-policy"
+              className="iubenda-white iubenda-noiframe iubenda-embed hover:text-accent transition-colors"
+              title="Cookie Policy"
+            >
+              Cookie Policy
+            </a>
+          </div>
         </div>
       </div>
     </footer>
