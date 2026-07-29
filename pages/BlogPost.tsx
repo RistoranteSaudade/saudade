@@ -4,6 +4,7 @@ import { fetchPostBySlug, SanityPost } from '../lib/queries';
 import { urlFor } from '../lib/sanity';
 import PortableTextRenderer from '../components/sections/PortableTextRenderer';
 import NotFound from './NotFound';
+import Seo from '../components/Seo';
 
 const BlogPost: React.FC = () => {
   const { slug = '' } = useParams();
@@ -26,8 +27,13 @@ const BlogPost: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-secondary">
-      <title>{post.title} | Saudade</title>
-      {post.excerpt && <meta name="description" content={post.excerpt} />}
+      <Seo
+        title={`${post.title} | Saudade`}
+        description={post.excerpt || 'Novità dal ristorante brasiliano Saudade a Torino.'}
+        path={`/blog/${slug}`}
+        image={post.coverImage ? urlFor(post.coverImage).width(1200).url() : undefined}
+        type="article"
+      />
       {post.coverImage && (
         <div className="h-[45vh] relative overflow-hidden">
           <img

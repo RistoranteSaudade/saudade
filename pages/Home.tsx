@@ -4,6 +4,7 @@ import { useSiteData } from '../context/SiteDataContext';
 import BookLink from '../components/BookLink';
 import { fetchHomePage, type SanityHomePage } from '../lib/queries';
 import { imageUrl } from '../lib/sanity';
+import Seo from '../components/Seo';
 
 const STORY_VIDEOS = ['/videos/carne-2.mp4', '/videos/carne-1.mp4'] as const;
 const SANITY_ENABLED = Boolean(import.meta.env.VITE_SANITY_PROJECT_ID);
@@ -69,8 +70,12 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <title>{homePage?.seoTitle || 'Saudade | Churrascaria Brasiliana a Torino'}</title>
-      <meta name="description" content={homePage?.seoDescription || 'Rodizio brasiliano, feijoada e cocktail bar in Piazza Vittorio Veneto, Torino.'} />
+      <Seo
+        title={homePage?.seoTitle || 'Saudade | Churrascaria Brasiliana a Torino'}
+        description={homePage?.seoDescription || 'Rodizio brasiliano, feijoada e cocktail bar in Piazza Vittorio Veneto, Torino.'}
+        path="/"
+        image="/images/hero-picanha.jpg"
+      />
 
       <section className="relative h-screen flex items-center justify-center overflow-hidden bg-secondary">
         {slides.map((s, index) => (

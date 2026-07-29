@@ -4,6 +4,7 @@ import { useSiteData } from '../context/SiteDataContext';
 import { buildCartaCategories } from '../lib/carta';
 import { fetchCartaPage, type SanityCartaPage } from '../lib/queries';
 import { imageUrl } from '../lib/sanity';
+import Seo from '../components/Seo';
 
 const SANITY_ENABLED = Boolean(import.meta.env.VITE_SANITY_PROJECT_ID);
 
@@ -25,7 +26,12 @@ const Carta: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-secondary">
-      <title>Carta | Saudade</title>
+      <Seo
+        title="Carta | Saudade"
+        description="La carta di Saudade: vini, distillati e cocktail selezionati per accompagnare il rodizio brasiliano a Torino."
+        path="/carta"
+        image="/images/SAUDADE-106.jpg"
+      />
       <div className="h-[45vh] relative overflow-hidden">
         <img
           src={imageUrl(page?.heroImage, 1600, 900) || '/images/SAUDADE-106.jpg'}

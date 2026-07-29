@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BookLink from '../components/BookLink';
 import { useSiteData } from '../context/SiteDataContext';
+import Seo from '../components/Seo';
 
 type NotFoundProps = {
   title?: string;
@@ -15,7 +16,7 @@ const NotFound: React.FC<NotFoundProps> = ({
   const { restaurantInfo: RESTAURANT_INFO } = useSiteData();
   return (
     <div className="min-h-[70vh] bg-secondary flex flex-col items-center justify-center text-center px-6 py-24">
-      <title>Pagina non trovata | Saudade</title>
+      <Seo title="Pagina non trovata | Saudade" description="La pagina richiesta non esiste." path="/404" noindex />
       <p className="font-serif text-accent text-6xl md:text-7xl mb-4 leading-none">{title}</p>
       <p className="text-stone-300 font-light mb-10 max-w-md">{message}</p>
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 w-full max-w-md sm:max-w-none">

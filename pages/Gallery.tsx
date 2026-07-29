@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import type { SanityGalleryImage } from '../lib/queries';
 import { imageUrl } from '../lib/sanity';
+import Seo from '../components/Seo';
 
 const GalleryItem: React.FC<{
   img: SanityGalleryImage
@@ -91,8 +92,11 @@ const Gallery: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-secondary">
-      <title>{title} | Saudade</title>
-      {seoDesc && <meta name="description" content={seoDesc} />}
+      <Seo
+        title={`${title} | Saudade`}
+        description={seoDesc || 'Foto del ristorante Saudade: ambienti, piatti e rodizio brasiliano a Torino.'}
+        path="/galleria"
+      />
 
       <section className="pt-28 pb-16 px-4">
         <h1 className="text-center font-serif text-4xl md:text-5xl text-accent mb-12">{title}</h1>

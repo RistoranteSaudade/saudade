@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchBlogPage, fetchPosts, SanityPost, type SanityBlogPage } from '../lib/queries';
 import { urlFor } from '../lib/sanity';
+import Seo from '../components/Seo';
 
 const SANITY_ENABLED = Boolean(import.meta.env.VITE_SANITY_PROJECT_ID);
 
@@ -24,7 +25,11 @@ const Blog: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-secondary">
-      <title>Blog | Saudade</title>
+      <Seo
+        title="Blog | Saudade"
+        description="Novità, eventi e storie dal ristorante brasiliano Saudade a Torino."
+        path="/blog"
+      />
       <div className="h-[45vh] relative overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 bg-black/60" />
         <h1 className="relative z-10 font-serif text-6xl md:text-7xl text-white pt-16">

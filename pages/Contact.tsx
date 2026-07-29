@@ -4,6 +4,7 @@ import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import BookLink from '../components/BookLink';
 import { fetchContactPage, type SanityContactPage } from '../lib/queries';
 import { imageUrl } from '../lib/sanity';
+import Seo from '../components/Seo';
 
 const SANITY_ENABLED = Boolean(import.meta.env.VITE_SANITY_PROJECT_ID);
 
@@ -55,7 +56,12 @@ const Contact: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-secondary">
-      <title>Contatti | Saudade</title>
+      <Seo
+        title="Contatti | Saudade"
+        description="Prenota un tavolo da Saudade: indirizzo, telefono e orari del ristorante brasiliano in Piazza Vittorio Veneto, Torino."
+        path="/contact"
+        image="/images/SAUDADE-37.jpg"
+      />
       <div className="h-[45vh] relative overflow-hidden">
         <img
           src={imageUrl(page?.heroImage, 1600, 900) || '/images/SAUDADE-37.jpg'}

@@ -13,6 +13,7 @@ import Gallery from './pages/Gallery';
 import BlogPost from './pages/BlogPost';
 import Page from './pages/Page';
 import NotFound from './pages/NotFound';
+import RestaurantSchema from './components/RestaurantSchema';
 import { SiteDataProvider } from './context/SiteDataContext';
 import { VisualEditing } from '@sanity/visual-editing/react';
 
@@ -31,6 +32,7 @@ function App() {
   return (
     <SiteDataProvider>
       <Router>
+        <RestaurantSchema />
         <ScrollToTop />
         <div className="flex flex-col min-h-screen bg-secondary text-stone-200 font-sans selection:bg-primary/40 selection:text-accent">
           <Navbar />

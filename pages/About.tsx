@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { fetchAboutPage } from '../lib/queries';
 import SectionRenderer from '../components/sections/SectionRenderer';
 import BookLink from '../components/BookLink';
+import Seo from '../components/Seo';
+
+const ABOUT_DESCRIPTION = 'La storia di Saudade: churrascaria brasiliana in Piazza Vittorio Veneto a Torino, dal 2019.';
 
 const SANITY_ENABLED = Boolean(import.meta.env.VITE_SANITY_PROJECT_ID);
 
@@ -19,7 +22,7 @@ const About: React.FC = () => {
   if (sections && sections.length > 0) {
     return (
       <div className="min-h-screen bg-secondary">
-        <title>Chi Siamo | Saudade</title>
+        <Seo title="Chi Siamo | Saudade" description={ABOUT_DESCRIPTION} path="/about" image="/images/SAUDADE-148.jpg" />
         <SectionRenderer sections={sections} />
       </div>
     );
@@ -27,7 +30,7 @@ const About: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-secondary">
-      <title>Chi Siamo | Saudade</title>
+      <Seo title="Chi Siamo | Saudade" description={ABOUT_DESCRIPTION} path="/about" image="/images/SAUDADE-148.jpg" />
       <div className="h-[45vh] relative overflow-hidden">
         <img
           src="/images/SAUDADE-148.jpg"

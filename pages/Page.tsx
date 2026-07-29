@@ -4,6 +4,7 @@ import { fetchPageBySlug, SanityPage } from '../lib/queries';
 import { urlFor } from '../lib/sanity';
 import SectionRenderer from '../components/sections/SectionRenderer';
 import NotFound from './NotFound';
+import Seo from '../components/Seo';
 
 const Page: React.FC = () => {
   const { slug = '' } = useParams();
@@ -26,9 +27,12 @@ const Page: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-secondary">
-      <title>{page.seo?.metaTitle || page.title} | Saudade</title>
-      {page.seo?.metaDescription && <meta name="description" content={page.seo.metaDescription} />}
-      {page.seo?.ogImage && <meta property="og:image" content={urlFor(page.seo.ogImage).width(1200).url()} />}
+      <Seo
+        title={`${page.seo?.metaTitle || page.title} | Saudade`}
+        description={page.seo?.metaDescription || `${page.title} | Saudade, ristorante brasiliano a Torino.`}
+        path={`/${slug}`}
+        image={page.seo?.ogImage ? urlFor(page.seo.ogImage).width(1200).url() : undefined}
+      />
       <SectionRenderer sections={page.sections} />
     </div>
   );

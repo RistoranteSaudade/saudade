@@ -6,6 +6,7 @@ import { fetchMenuPage, type SanityMenuPage } from '../lib/queries';
 import { imageUrl } from '../lib/sanity';
 import { buildCartaCategories, getDisplayArea } from '../lib/carta';
 import CartaItemBlock from '../components/CartaItemBlock';
+import Seo from '../components/Seo';
 
 const TABS = [
   { id: 'carni', label: 'Le Carni' },
@@ -36,7 +37,12 @@ const Menu: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-secondary">
-      <title>Menu | Saudade</title>
+      <Seo
+        title="Menu | Saudade"
+        description="Scopri il menu di Saudade: rodizio brasiliano, carni selezionate, accompagnamenti, dolci, vini e cocktail a Torino."
+        path="/menu"
+        image="/images/SAUDADE-132.jpg"
+      />
       <div className="h-[45vh] relative overflow-hidden">
         <img
           src={imageUrl(menuPage?.heroImage, 1600, 900) || '/images/SAUDADE-132.jpg'}
