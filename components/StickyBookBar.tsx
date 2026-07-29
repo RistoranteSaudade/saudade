@@ -16,14 +16,14 @@ const StickyBookBar: React.FC = () => {
 
   return (
     <div
-      className={`fixed bottom-0 inset-x-0 z-40 md:hidden transition-all duration-300 ${
+      className={`fixed bottom-0 inset-x-0 z-40 md:hidden pointer-events-none transition-all duration-300 ${
         visible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       }`}
     >
       <div className="bg-[#0a0a0a]/95 border-t border-accent/40 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
         <BookLink
           variant="sticky"
-          className="flex w-full items-center justify-center gap-2.5 py-4 text-[13px] tracking-[0.18em]"
+          className="flex w-full items-center justify-center gap-2.5 py-4 text-[13px] tracking-[0.18em] pointer-events-auto"
         >
           <Calendar className="h-4 w-4 shrink-0" strokeWidth={2} />
           {RESTAURANT_INFO.bookingLabel}
